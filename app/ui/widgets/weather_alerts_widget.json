@@ -1,0 +1,48 @@
+{
+  "type": "container",
+  "props": {
+    "className": "flex flex-col gap-4 p-4 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800"
+  },
+  "children": [
+    {
+      "type": "text",
+      "props": {
+        "text": "Daily Weather Alert Subscription",
+        "className": "font-bold text-lg text-slate-800 dark:text-white"
+      }
+    },
+    {
+      "type": "input",
+      "props": {
+        "name": "location",
+        "label": "Location",
+        "placeholder": "Enter city name..."
+      }
+    },
+    {
+      "type": "input",
+      "props": {
+        "name": "time",
+        "label": "Alert Time (24h format)",
+        "inputType": "time"
+      }
+    },
+    {
+      "type": "toggle",
+      "props": {
+        "name": "enabled",
+        "label": "Enable Daily Updates",
+        "variant": "switch",
+        "size": "md"
+      }
+    },
+    {
+      "type": "button",
+      "props": {
+        "label": "Save Alert Setting",
+        "actionUrl": "agent://save_weather_alert",
+        "className": "bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg mt-2"
+      }
+    }
+  ]
+}

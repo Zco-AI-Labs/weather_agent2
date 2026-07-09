@@ -1,0 +1,27 @@
+{
+  "type": "container",
+  "props": {
+    "className": "flex flex-col gap-4 p-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl"
+  },
+  "children": [
+    {
+      "type": "text",
+      "props": {
+        "text": "3-Day Weather Forecast: {{location}}",
+        "className": "font-bold text-lg text-slate-800 dark:text-white"
+      }
+    },
+    {
+      "type": "table",
+      "props": {
+        "paginated": false,
+        "columns": [
+          { "key": "date", "name": "Date", "width": "30%" },
+          { "key": "condition", "name": "Condition", "width": "40%" },
+          { "key": "temp", "name": "Min/Max Temp", "width": "30%" }
+        ],
+        "rows": "{{forecast_rows}}"
+      }
+    }
+  ]
+}

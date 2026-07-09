@@ -30,7 +30,7 @@ from app.app_utils.vertex_gemini import get_model
 
 root_agent = AdkAgent(
     model=get_model("gemini-2.5-flash"),
-    name="weather_agent2",
+    name="weather_expert",
     description="Provides weather conditions, forecasts, and daily weather alerts.",
     instruction=system_instruction,
     tools=tools

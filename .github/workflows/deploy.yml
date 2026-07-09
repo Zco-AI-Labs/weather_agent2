@@ -46,13 +46,17 @@ jobs:
             export GOOGLE_APPLICATION_CREDENTIALS="$PARENT_DIR/gha-creds-temp.json"
           fi
           cd ..
-          mv "$REPO_DIR" "$NORM_DIR"
+          if [ "$REPO_DIR" != "$NORM_DIR" ]; then
+            mv "$REPO_DIR" "$NORM_DIR"
+          fi
           cd "$NORM_DIR"
           echo "from app.core.agent_runtime_app import agent_runtime, AgentEngineApp" > app/agent_runtime_app.py
           export PYTHONPATH="$(pwd)"
           python deploy.py
           cd ..
-          mv "$NORM_DIR" "$REPO_DIR"
+          if [ "$REPO_DIR" != "$NORM_DIR" ]; then
+            mv "$NORM_DIR" "$REPO_DIR"
+          fi
           if [ -n "$GOOGLE_APPLICATION_CREDENTIALS" ]; then
             rm -f "$GOOGLE_APPLICATION_CREDENTIALS"
           fi
